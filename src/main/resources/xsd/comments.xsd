@@ -1,0 +1,77 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="com.eddy.commentssoap"
+           targetNamespace="com.eddy.commentssoap" elementFormDefault="qualified">
+
+    <xs:element name="getCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCommentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="comment" type="tns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="comment" type="tns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCommentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="comment" type="tns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="text" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateCommentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="comment" type="tns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCommentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="comment">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="text" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
